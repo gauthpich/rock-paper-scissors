@@ -25,7 +25,7 @@
                 return "ciseaux";
             }
         }
-        
+
         // Obtenir un choix de l'utilisateur
         function getHumanChoice() {
             let humanChoice = prompt("Choisissez entre pierre, feuille et ciseaux !").toLowerCase();
@@ -36,7 +36,29 @@
         let humanScore = 0;
         let computerScore = 0;
 
-
+        // Jouer un tour
+        function playRound(humanChoice, computerChoice) {
+            if (humanChoice === computerChoice) {
+                console.log("Égalité !");
+            } else if ((humanChoice === "pierre" && computerChoice === "ciseaux")
+                || (humanChoice === "ciseaux" && computerChoice === "feuille")
+                || (humanChoice === "feuille" && computerChoice === "pierre")) {
+                console.log("Gagné !");
+            } else {
+                console.log("Perdu !");
+            }
+            // Suivi du score
+            if ((humanChoice === "pierre" && computerChoice === "ciseaux")
+                || (humanChoice === "feuille" && computerChoice === "pierre")
+                || (humanChoice === "ciseaux" && computerChoice === "feuille")) {
+                humanScore++;
+            } else if ((computerChoice === "pierre" && humanChoice === "ciseaux")
+                || (computerChoice === "feuille" && humanChoice === "pierre")
+                || (computerChoice === "ciseaux" && humanChoice === "feuille")) {
+                computerScore++;
+            }
+            console.log(`Score : Vous - ${humanScore} / Ordinateur - ${computerScore}`);
+        }
     </script>
 
 </body>
