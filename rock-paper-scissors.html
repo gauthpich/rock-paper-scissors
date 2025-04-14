@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -15,11 +15,16 @@
 
         // Début de l'exercice
         // Obenir un choix aléatoire de l'ordinateur
-        function getComputerChoice(max) {
-            return Math.floor(Math.random() * max);
+        function getComputerChoice() {
+            let computerChoice = Math.floor(Math.random() * 3);
+            if (computerChoice === 0) {
+                return "pierre";
+            } else if (computerChoice === 1) {
+                return "feuille";
+            } else {
+                return "ciseaux";
+            }
         }
-        console.log(getComputerChoice(3));
-
     </script>
 
 </body>
