@@ -29,6 +29,10 @@
         // Obtenir un choix de l'utilisateur
         function getHumanChoice() {
             let humanChoice = prompt("Choisissez entre pierre, feuille et ciseaux !").toLowerCase();
+            if (!["pierre", "feuille", "ciseaux"].includes(humanChoice)) {
+                alert("Vous ne pouvez choisir que pierre, feuille ou ciseaux !");
+                return getHumanChoice();
+            }
             return humanChoice;
         }
 
@@ -78,6 +82,7 @@
                 console.log("Égalité !");
             }
         }
+
         // Lancement de la partie
         playGame();
     </script>
